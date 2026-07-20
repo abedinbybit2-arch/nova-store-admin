@@ -1,17 +1,9 @@
-# Nova Store — Admin Panel
+# Nova — Admin
 
-Control the public landing page live via **Firebase Realtime Database**.
+Professional admin dashboard for storefront content, products, and customer chat.
 
-## Features
+## Capabilities
 
-- Change website title, tagline, hero text
-- Add / delete products
-- Live sync to user site
-
-## Login
-
-- Password: `Admin@12345`
-
-## Firebase project
-
-- Project ID: `marketing-4b1f1`
+- Update site title, tagline, hero text
+- Add / remove products
+- Message inbox with live replies
