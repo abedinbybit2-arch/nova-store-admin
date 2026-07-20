@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nova Store Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="loginView" class="login-wrap">
+    <form class="login-card" id="loginForm">
+      <h1>Admin Panel</h1>
+      <p>Control the live user landing page</p>
+      <label>
+        Password
+        <input type="password" id="password" placeholder="Enter admin password" required />
+      </label>
+      <button type="submit">Sign in</button>
+      <p class="hint">Default: <code>Admin@12345</code></p>
+      <p class="error" id="loginError" hidden></p>
+    </form>
+  </div>
+
+  <div id="adminView" class="admin" hidden>
+    <header class="top">
+      <div>
+        <h1>Nova Store Admin</h1>
+        <p>Firebase-powered live control</p>
+      </div>
+      <button type="button" class="ghost" id="logoutBtn">Log out</button>
+    </header>
+
+    <section class="panel">
+      <h2>Website title &amp; text</h2>
+      <form id="settingsForm" class="form-grid">
+        <label>
+          Site title
+          <input type="text" id="titleInput" required maxlength="80" />
+        </label>
+        <label>
+          Tagline
+          <input type="text" id="taglineInput" maxlength="160" />
+        </label>
+        <label class="full">
+          Hero text
+          <textarea id="heroInput" rows="3" maxlength="300"></textarea>
+        </label>
+        <button type="submit">Save changes</button>
+        <p class="ok" id="settingsMsg" hidden>Saved — user site updated live</p>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Add product</h2>
+      <form id="productForm" class="form-grid">
+        <label>
+          Product name
+          <input type="text" id="productName" required maxlength="80" />
+        </label>
+        <label>
+          Price (USD)
+          <input type="number" id="productPrice" min="0" step="0.01" required />
+        </label>
+        <label class="full">
+          Description
+          <input type="text" id="productDesc" maxlength="200" />
+        </label>
+        <label class="full">
+          Image URL
+          <input type="url" id="productImage" placeholder="https://..." />
+        </label>
+        <button type="submit">Add product</button>
+        <p class="ok" id="productMsg" hidden>Product added</p>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Products</h2>
+      <div id="adminProductList" class="list"></div>
+    </section>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
